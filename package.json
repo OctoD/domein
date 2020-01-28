@@ -17,6 +17,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "postinstall": "lerna bootstrap",
+    "publish": "lerna publish",
     "prepublishOnly": "lerna run prepublishOnly",
     "test": "lerna run test"
   }
