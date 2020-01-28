@@ -16,6 +16,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "postinstall": "lerna bootstrap",
     "prepublishOnly": "lerna run prepublishOnly",
     "test": "lerna run test"
   }
