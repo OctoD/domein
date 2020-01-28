@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@actions": ["./store/actions.ts"],
+      "@components/*": ["./components/*"],
+      "@domains/*": ["./app/*"],
+      "@hocs/*": ["./hocs/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@sdk": ["./sdk"],
+      "@sdk/*": ["./sdk/*"],
+      "@state": ["./store/index.ts"],
+      "@store/*": ["./store/*"]
+    }
+  }
+}

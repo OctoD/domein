@@ -1,0 +1,72 @@
+{
+  "name": "domein",
+  "version": "0.4.3",
+  "licence": "MIT",
+  "author": {
+    "name": "Paolo Roth",
+    "email": "iamoctod@gmail.com"
+  },
+  "main": "dist/index.js",
+  "description": "Just another juicy state manager lib for your js apps.",
+  "keywords": [
+    "typescript"
+  ],
+  "scripts": {
+    "changelog": "standard-changelog",
+    "clean": "rimraf dist",
+    "docs": "npm run clean && typedoc --options typedoc.markdown.json",
+    "lint": "eslint -c ./.eslintrc.json src/**/*.ts --fix",
+    "prepublishOnly": "npm run clean && tsc -p tsconfig.npm.json",
+    "size-limit": "npm run clean && tsc -p . && size-limit",
+    "test": "jest",
+    "upgrade-interactive": "npm-check --update"
+  },
+  "homepage": "https://github.com/yourname/yourrepo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/yourrepo.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "size-limit": [
+    {
+      "limit": "1 s",
+      "webpack": false,
+      "path": "dist/*.js"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^3.0.0",
+    "@size-limit/time": "^3.0.0",
+    "@types/benchmark": "^1.0.31",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.6",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "codecov": "^3.5.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.0.6",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "npm-check": "^5.9.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "standard-changelog": "^2.0.21",
+    "ts-jest": "^24.3.0",
+    "typedoc": "^0.15.7",
+    "typedoc-plugin-markdown": "^2.2.16",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "tiinvo": "^1.6.1"
+  }
+}

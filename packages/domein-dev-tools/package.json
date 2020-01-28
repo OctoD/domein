@@ -1,0 +1,98 @@
+{
+  "name": "domein-dev-tools",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/date-fns": "^2.0.1",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@material-ui/core": "^4.7.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.33",
+    "@material-ui/styles": "^4.7.1",
+    "@material-ui/system": "^4.7.1",
+    "@types/react-router-dom": "^5.1.3",
+    "clsx": "^1.0.4",
+    "date-fns": "^2.8.1",
+    "domein": "^0.4.2",
+    "domein-react": "^0.3.1",
+    "framer-motion": "^1.7.2",
+    "logrocket": "^1.0.5",
+    "prismjs": "^1.19.0",
+    "react": "^16.12.0",
+    "react-diff-viewer": "^3.0.1",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-intl": "^3.9.2",
+    "react-json-view": "^1.19.1",
+    "react-scripts": "^3.3.0",
+    "react-use": "^13.21.0",
+    "tiinvo": "^1.5.1",
+    "typeface-roboto": "0.0.75",
+    "yup": "^0.28.0"
+  },
+  "scripts": {
+    "start": "SKIP_PREFLIGHT_CHECK=true react-app-rewired start",
+    "build": "react-app-rewired build",
+    "buildextension": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
+    "translate:clean": "rimraf ./src/extracted",
+    "translate:compile": "tsc -p . --target ES6 --module esnext --jsx preserve --outDir src/extracted --noEmit false",
+    "translate:extract": "babel ./src/extracted",
+    "translate:manage": "node ./manageTranslations.js",
+    "translate:mkdirp": "mkdirp ./src/extracted",
+    "translate": "npm run translate:mkdirp && npm run translate:compile && npm run translate:extract && npm run translate:manage && npm run translate:clean",
+    "upgrade-interactive": "npm-check -u"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@types/chrome": "0.0.91",
+    "@types/classnames": "^2.2.9",
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.8",
+    "@types/prismjs": "^1.16.0",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-helmet": "^5.0.14",
+    "@types/react-intl": "^3.0.0",
+    "@types/yup": "^0.26.26",
+    "babel-plugin-react-intl": "^5.1.11",
+    "husky": "^4.0.10",
+    "lint-staged": "^10.0.1",
+    "mkdirp": "^0.5.1",
+    "npm-check": "^5.9.0",
+    "prettier": "^1.19.1",
+    "react-app-rewired": "^2.1.5",
+    "react-intl-translations-manager": "^5.0.3",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

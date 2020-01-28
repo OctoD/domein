@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "domein-devtools",
+  "description": "Development tools for domein for debugging application state changes.",
+  "applications": {
+    "gecko": {
+      "id": "extension@domein.devtools",
+      "strict_min_version": "64.0"
+    }
+  },
+  "background": {
+    "scripts": [
+      "extension/background/index.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "devtools_page": "domein.html",
+  "manifest_version": 2,
+  "web_accessible_resources": [
+    "extension/browser/index.js",
+    "extension/browser/domein-middleware-binding.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "extension/browser/index.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
