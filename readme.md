@@ -1,6 +1,8 @@
 domein
 ======
 
+![Node CI](https://github.com/OctoD/domein/workflows/Node%20CI/badge.svg)
+
 Just another juicy state manager lib for your js apps.
 
 Heavily inspired by redux obviously.
