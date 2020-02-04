@@ -25,63 +25,62 @@ export interface IDevtoolsConfig {
 }
 
 export function devtools(config: IDevtoolsConfig = {}): Middleware {
-  if (!config.disabled) {
-    tryexec(devtoolsrestartkey);
+  if (config.disabled) {
+    return () => message => message.state.next;
   }
-  return domainsmap => {
-    if (!config.disabled) {
-      tryexec(
-        devtoolsactiondispatchkey,
-        async (message: IDispatchActionMessage) => {
-          const domain = domainsmap[message.domain];
-          const action: any = createPublicAction({
-            actionname: message.name,
-            channel: domain.setstatechannel,
-            domainname: message.domain,
-            getstate: domain.get,
-            mediator: domain.mediator,
-            middlewares: [
-              middlewaremessage =>
-                tryexec(devtoolsextensionkey, middlewaremessage)
-            ],
-            privateaction: domain.actions[message.name] as any
-          });
-          action(message.payload);
-        }
-      );
 
-      const domains = Object.keys(domainsmap);
-      const actions = domains.map(key =>
-        Object.keys(domainsmap[key].actions).reduce(
-          (actionsmap, action) => ({
-            ...actionsmap,
-            [action]: {
-              haspayload: domainsmap[key].actions[action].length > 1,
-              name: action
-            }
-          }),
-          {}
-        )
-      );
-      const initialstate = domains.reduce(
-        (state, domain) => ({
-          ...state,
-          [domain]: domainsmap[domain].get()
+  tryexec(devtoolsrestartkey);
+
+  return domainsmap => {
+    tryexec(
+      devtoolsactiondispatchkey,
+      async (message: IDispatchActionMessage) => {
+        const domain = domainsmap[message.domain];
+        const action: any = createPublicAction({
+          actionname: message.name,
+          channel: domain.setstatechannel,
+          domainname: message.domain,
+          getstate: domain.get,
+          mediator: domain.mediator,
+          middlewares: [
+            middlewaremessage =>
+              tryexec(devtoolsextensionkey, middlewaremessage)
+          ],
+          privateaction: domain.actions[message.name] as any
+        });
+        action(message.payload);
+      }
+    );
+
+    const domains = Object.keys(domainsmap);
+    const actions = domains.map(key =>
+      Object.keys(domainsmap[key].actions).reduce(
+        (actionsmap, action) => ({
+          ...actionsmap,
+          [action]: {
+            haspayload: domainsmap[key].actions[action].length > 1,
+            name: action
+          }
         }),
         {}
-      );
+      )
+    );
+    const initialstate = domains.reduce(
+      (state, domain) => ({
+        ...state,
+        [domain]: domainsmap[domain].get()
+      }),
+      {}
+    );
 
-      tryexec(devtoolsdomainsmapkey, {
-        actions,
-        domains,
-        initialstate
-      });
-    }
+    tryexec(devtoolsdomainsmapkey, {
+      actions,
+      domains,
+      initialstate
+    });
 
     return message => {
-      if (!config.disabled) {
-        tryexec(devtoolsextensionkey, message);
-      }
+      tryexec(devtoolsextensionkey, message);
 
       return message.state.next;
     };
