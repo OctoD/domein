@@ -20,7 +20,7 @@ jobs:
       - name: Build npm packages
         run: |
           npm install
-          npm prepublishOnly
+          npm run build
       - name: Creates devtools zip files
         run: |
           zip --junk-paths devtools packages/domein-dev-tools/build
