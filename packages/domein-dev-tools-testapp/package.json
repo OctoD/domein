@@ -69,7 +69,7 @@
     "@types/yup": "0.26.29",
     "babel-plugin-react-intl": "5.1.18",
     "husky": "4.2.1",
-    "lint-staged": "10.0.2",
+    "lint-staged": "10.0.7",
     "mkdirp": "0.5.1",
     "npm-check": "5.9.0",
     "prettier": "1.19.1",
