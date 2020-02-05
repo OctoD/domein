@@ -45,7 +45,7 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "3.0.1",
+    "@size-limit/preset-small-lib": "4.0.1",
     "@size-limit/time": "3.0.1",
     "@testing-library/react": "9.4.0",
     "@types/benchmark": "1.0.31",
