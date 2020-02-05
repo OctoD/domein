@@ -75,7 +75,7 @@
     "prettier": "1.19.1",
     "react-app-rewired": "2.1.5",
     "react-intl-translations-manager": "5.0.3",
-    "rimraf": "3.0.0",
+    "rimraf": "3.0.1",
     "typescript": "3.7.5"
   },
   "husky": {
