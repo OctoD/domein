@@ -46,7 +46,7 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "3.0.1",
-    "@size-limit/time": "3.0.1",
+    "@size-limit/time": "4.0.1",
     "@types/benchmark": "1.0.31",
     "@types/jest": "25.1.1",
     "@types/node": "13.7.0",
