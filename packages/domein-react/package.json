@@ -1,6 +1,6 @@
 {
   "name": "domein-react",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "licence": "MIT",
   "author": {
     "name": "Paolo Roth",
@@ -56,7 +56,7 @@
     "@typescript-eslint/parser": "2.19.0",
     "benchmark": "2.1.4",
     "codecov": "3.6.4",
-    "domein": "^0.5.0",
+    "domein": "^0.5.1",
     "eslint": "6.8.0",
     "husky": "4.2.1",
     "jest": "25.1.0",

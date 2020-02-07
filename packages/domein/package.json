@@ -1,6 +1,6 @@
 {
   "name": "domein",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "licence": "MIT",
   "author": {
     "name": "Paolo Roth",
@@ -45,7 +45,6 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "4.0.1",
     "@size-limit/preset-small-lib": "3.0.1",
     "@size-limit/time": "4.0.1",
     "@types/benchmark": "1.0.31",
