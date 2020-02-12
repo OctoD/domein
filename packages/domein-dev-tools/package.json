@@ -74,7 +74,7 @@
     "@types/react-intl": "3.0.0",
     "@types/yup": "0.26.30",
     "babel-plugin-react-intl": "5.1.18",
-    "husky": "4.2.2",
+    "husky": "4.2.3",
     "lint-staged": "10.0.7",
     "mkdirp": "1.0.3",
     "npm-check": "5.9.0",
