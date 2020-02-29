@@ -22,7 +22,7 @@
     "react-helmet": "5.2.1",
     "react-intl": "3.12.0",
     "react-scripts": "3.4.0",
-    "react-use": "13.26.3",
+    "react-use": "13.26.4",
     "tiinvo": "1.6.3",
     "yup": "0.28.1"
   },
