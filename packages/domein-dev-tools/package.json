@@ -15,7 +15,7 @@
     "date-fns": "2.10.0",
     "domein": "^0.5.1",
     "domein-react": "^0.5.1",
-    "framer-motion": "1.8.4",
+    "framer-motion": "1.9.0",
     "logrocket": "1.0.6",
     "prismjs": "1.19.0",
     "react": "16.13.0",
