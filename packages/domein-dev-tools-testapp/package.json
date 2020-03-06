@@ -24,7 +24,7 @@
     "react-scripts": "3.4.0",
     "react-use": "13.27.0",
     "tiinvo": "1.6.3",
-    "yup": "0.28.2"
+    "yup": "0.28.3"
   },
   "scripts": {
     "start": "SKIP_PREFLIGHT_CHECK=true react-app-rewired start",
