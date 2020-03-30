@@ -61,7 +61,7 @@
     "prettier": "1.19.1",
     "rimraf": "3.0.2",
     "standard-changelog": "2.0.21",
-    "ts-jest": "25.2.1",
+    "ts-jest": "25.3.0",
     "typedoc": "0.17.3",
     "typedoc-plugin-markdown": "2.2.17",
     "typescript": "3.7.5"
